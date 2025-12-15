@@ -5,10 +5,14 @@ from mgraph_ai_service_aws.config                           import FAST_API__TIT
 from mgraph_ai_service_aws.utils.Version                    import version__mgraph_ai_service_aws
 
 
-class Base__Service__Fast_API(Serverless__Fast_API):
-    name        = FAST_API__TITLE
-    version     = version__mgraph_ai_service_aws
-    description = FAST_API__DESCRIPTION
+class AWS__Service__Fast_API(Serverless__Fast_API):
+
+    def setup(self):
+        with self.config as _:
+            _.name           = FAST_API__TITLE
+            _.version        = version__mgraph_ai_service_aws
+            _.description    = FAST_API__DESCRIPTION
+        return super().setup()
 
     def setup_routes(self):
         self.add_routes(Routes__Info        )
