@@ -1,0 +1,1 @@
+from mgraph_ai_service_aws.fast_api.AWS__Service__Fast_API import AWS__Service__Fast_API

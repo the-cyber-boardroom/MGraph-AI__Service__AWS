@@ -1,5 +1,6 @@
 #!/bin/bash
-PORT=10020
+#PORT=10020
+
 
 # Load environment variables from .env file if it exists
 if [ -f .local-server.env ]; then
@@ -11,6 +12,9 @@ else
     echo "   Create a .env file with your configuration"
 fi
 
-poetry run uvicorn mgraph_ai_service_graph.fast_api.lambda_handler:app --reload --host 0.0.0.0 --port $PORT \
-    --log-level info \
-    --no-access-log
+poetry run uvicorn mgraph_ai_service_aws.fast_api.lambda_handler:app \
+        --reload \
+        --host 0.0.0.0 \
+        --port $LOCAL_SERVER__PORT \
+        --log-level info \
+        --no-access-log

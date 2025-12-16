@@ -1,0 +1,3 @@
+from mgraph_ai_service_aws.fast_api.routes.Routes__AWS__Lambda import Routes__AWS__Lambda
+from mgraph_ai_service_aws.fast_api.routes.Routes__AWS__S3     import Routes__AWS__S3
+from mgraph_ai_service_aws.fast_api.routes.Routes__Encryption  import Routes__Encryption
